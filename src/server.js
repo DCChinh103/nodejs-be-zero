@@ -7,8 +7,12 @@ const app = express() // app express
 const port = process.env.PORT || 8888; //port || 8888 để đề phòng khi mà port không chạy được sẽ chạy cổng khác để sever không bị chết
 const hostname = process.env.HOST_NAME;
 
+//config template engine 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+
+//config static files
+app.use(express.static(path.join(__dirname, 'public')))
 
 //khai báo  route
 app.get('/', (req, res) => {
