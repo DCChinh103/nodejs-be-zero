@@ -12,8 +12,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 //config static files
-app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.static(path.join(__dirname, 'public'))) // các file trong thư mục public bao gồm css,image,js động
+//khi config thư mục publicc khi sử dụng ở view web sẽ tự hiểu là lấy các thư mục trong upublic
 //khai báo  route
 app.get('/', (req, res) => {
     res.send('Hello World! vs Do Cong Chinh Code Dao okosksks')
